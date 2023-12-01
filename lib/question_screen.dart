@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StartScreen extends StatelessWidget {
-  const StartScreen({super.key, required this.onAction});
 
-  final Function() onAction;
+class QuestionScreen extends StatelessWidget {
+  const QuestionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,18 +11,11 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            width: 300,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: Image.asset('assets/images/quizcover.jpg'),
-            ),
-          ),
           const SizedBox(
             height: 10,
           ),
           Text(
-            'Welcome!',
+            'Questions',
             style: GoogleFonts.poppins(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -39,16 +31,15 @@ class StartScreen extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 backgroundColor: Colors.blue[300],
               ),
-              onPressed: onAction,
+              onPressed: () {},
               autofocus: true,
-              child: Text(
-                "Start Quiz",
+               child: Text("Answer 1",
                 style: GoogleFonts.poppins(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
-              ),
+               ),
             ),
           ),
         ],
