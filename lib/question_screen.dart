@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class QuestionScreen extends StatelessWidget {
-  const QuestionScreen({super.key});
+  const QuestionScreen({super.key, required this.onAction});
+
+  final Function(String value) onAction;
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +34,29 @@ class QuestionScreen extends StatelessWidget {
               ),
               onPressed: () {},
               autofocus: true,
-               child: Text("Answer 1",
+              child: Text(
+                "Answer 1",
                 style: GoogleFonts.poppins(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
-               ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          TextButton(
+            onPressed: () {
+              onAction('start');
+            },
+            child: Text(
+              '<< Back',
+              style: GoogleFonts.poppins(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

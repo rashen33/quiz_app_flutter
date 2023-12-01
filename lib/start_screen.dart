@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key, required this.onAction});
 
-  final Function() onAction;
+  final Function(String value) onAction;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,9 @@ class StartScreen extends StatelessWidget {
               style: OutlinedButton.styleFrom(
                 backgroundColor: Colors.blue[300],
               ),
-              onPressed: onAction,
+              onPressed: () {
+                onAction('quiz');
+              },
               autofocus: true,
               child: Text(
                 "Start Quiz",
