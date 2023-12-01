@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app_flutter/answer_button.dart';
 
 class QuestionScreen extends StatelessWidget {
   const QuestionScreen({super.key, required this.onAction});
@@ -25,25 +26,11 @@ class QuestionScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          SizedBox(
-            width: 130,
-            height: 50,
-            child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                backgroundColor: Colors.blue[300],
-              ),
-              onPressed: () {},
-              autofocus: true,
-              child: Text(
-                "Answer 1",
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
+          AnswerButton(value: 'Answer 1', onAnswer: () {}),
+          AnswerButton(value: 'Answer 2', onAnswer: () {}),
+          AnswerButton(value: 'Answer 3', onAnswer: () {}),
+          AnswerButton(value: 'Answer 4', onAnswer: () {}),
+          AnswerButton(value: 'Answer 5', onAnswer: () {}),
           const SizedBox(
             height: 10,
           ),
@@ -56,6 +43,7 @@ class QuestionScreen extends StatelessWidget {
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
           ),
