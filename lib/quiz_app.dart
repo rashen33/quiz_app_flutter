@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_flutter/start_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -21,6 +22,7 @@ class _QuizState extends State<Quiz> {
               end: Alignment.topLeft,
             ),
           ),
+          child: const StartScreen(),
         ),
       ),
     );
