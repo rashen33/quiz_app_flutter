@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app_flutter/answer_button.dart';
+import 'package:quiz_app_flutter/data/questions.dart';
 
 class QuestionScreen extends StatelessWidget {
   const QuestionScreen({super.key, required this.onAction});
@@ -26,11 +27,7 @@ class QuestionScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          AnswerButton(value: 'Answer 1', onAnswer: () {}),
-          AnswerButton(value: 'Answer 2', onAnswer: () {}),
-          AnswerButton(value: 'Answer 3', onAnswer: () {}),
-          AnswerButton(value: 'Answer 4', onAnswer: () {}),
-          AnswerButton(value: 'Answer 5', onAnswer: () {}),
+          ...quesitons[0].answers.map((answer) => AnswerButton(value: answer, onAnswer: () {},)), //Getting the answers from the questions.dart file
           const SizedBox(
             height: 10,
           ),
