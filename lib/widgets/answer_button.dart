@@ -5,7 +5,7 @@ class AnswerButton extends StatelessWidget {
   const AnswerButton({super.key, required this.value, required this.onAnswer});
 
   final String value;
-  final Function() onAnswer;
+  final Function(String value) onAnswer;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,9 @@ class AnswerButton extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             backgroundColor: Colors.blue[300],
           ),
-          onPressed: onAnswer,
+          onPressed: () {
+            onAnswer(value);
+          },
           autofocus: true,
           child: Text(
             value,

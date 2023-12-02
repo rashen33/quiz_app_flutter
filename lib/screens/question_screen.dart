@@ -4,8 +4,10 @@ import 'package:quiz_app_flutter/widgets/answer_button.dart';
 import 'package:quiz_app_flutter/data/questions.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key, required this.onAction});
+  const QuestionScreen(
+      {super.key, required this.onAnswer, required this.onAction});
   final Function(String value) onAction;
+  final Function(String value) onAnswer;
 
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
@@ -14,7 +16,8 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   int currentIndex = 0;
 
-  void answerQuetion() {
+  void answerQuetion(String answer) {
+    widget.onAnswer(answer);
     setState(() {
       currentIndex++;
     });
