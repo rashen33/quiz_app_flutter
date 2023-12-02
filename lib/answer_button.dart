@@ -10,19 +10,23 @@ class AnswerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200,
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-          backgroundColor: Colors.blue[300],
-        ),
-        onPressed: onAnswer,
-        autofocus: true,
-        child: Text(
-          value,
-          style: GoogleFonts.poppins(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+      width: 250,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
+            backgroundColor: Colors.blue[300],
+          ),
+          onPressed: onAnswer,
+          autofocus: true,
+          child: Text(
+            value,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
