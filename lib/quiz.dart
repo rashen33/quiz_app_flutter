@@ -60,7 +60,7 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == 'result') {
-      currentScreen = ResultScreen(onAction: onRestart);
+      currentScreen = ResultScreen(onAction: onRestart, answerList: selectedAnswer);
     }
 
     return MaterialApp(

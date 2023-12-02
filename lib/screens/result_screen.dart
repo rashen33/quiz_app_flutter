@@ -1,9 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app_flutter/data/questions.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.onAction});
+  const ResultScreen({super.key, required this.onAction, required this.answerList});
   final Function(String value) onAction;
+  final List<String> answerList;
+
+  
+  List<Map<String,Object>> getSummary(){
+    List<Map<String, Object>> summary = [];
+
+    for (var i = 0; i < answerList.length; i++) {
+      summary.add({
+        'questionIndex': i,
+        'question': quesitons[i].question,
+        'correct_answer': quesitons[i].answers[0],
+        'user_answer': answerList[i]
+      });
+    }
+
+    return summary;
+  }
 
 
   @override
@@ -19,6 +37,9 @@ class ResultScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          ...getSummary()
+            .map(
+              (s) => Text(((s['question'] as int) + 1).toString())),
           const SizedBox(
             height: 10,
           ),
