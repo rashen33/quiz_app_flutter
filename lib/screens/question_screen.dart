@@ -4,8 +4,7 @@ import 'package:quiz_app_flutter/widgets/answer_button.dart';
 import 'package:quiz_app_flutter/data/questions.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen(
-      {super.key, required this.onAnswer, required this.onAction});
+  const QuestionScreen({super.key, required this.onAnswer, required this.onAction});
   final Function(String value) onAction;
   final Function(String value) onAnswer;
 

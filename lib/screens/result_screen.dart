@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  const ResultScreen({super.key, required this.onAction});
+  final Function(String value) onAction;
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +30,12 @@ class ResultScreen extends StatelessWidget {
                 backgroundColor: Colors.blue[300],
               ),
               onPressed: () {
-                // onAction('quiz');
+                onAction('quiz');
               },
               autofocus: true,
               child: SizedBox(
                 child: Text(
-                  "Restart",
+                  "Home",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 18,
