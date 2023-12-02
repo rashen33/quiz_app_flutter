@@ -4,7 +4,8 @@ import 'package:quiz_app_flutter/widgets/answer_button.dart';
 import 'package:quiz_app_flutter/data/questions.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key, required this.onAnswer, required this.onAction});
+  const QuestionScreen(
+      {super.key, required this.onAnswer, required this.onAction});
   final Function(String value) onAction;
   final Function(String value) onAnswer;
 
@@ -42,10 +43,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
           const SizedBox(
             height: 10,
           ),
-          ...quesitons[currentIndex].answers.map((answer) => AnswerButton(
-                value: answer,
-                onAnswer: answerQuetion,
-              )), //Getting the answers from the questions.dart file
+          ...quesitons[currentIndex]
+              .getRandomAnswers()
+              .map((answer) => AnswerButton(
+                    value: answer,
+                    onAnswer: answerQuetion,
+                  )), //Getting the answers from the questions.dart file
           const SizedBox(
             height: 10,
           ),
