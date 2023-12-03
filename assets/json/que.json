@@ -1,12 +1,7 @@
 [
   {
     "question": "What are the main building blocks of Flutter UIs?",
-    "options": [
-      "Widgets",
-      "Components",
-      "Blocks",
-      "Functions"
-    ]
+    "options": ["Widgets", "Components", "Blocks", "Functions"]
   },
   {
     "question": "How are Flutter UIs built?",
@@ -27,7 +22,7 @@
     ]
   },
   {
-    "question": "Which widget should you try to use more often: StatelessWidget or StatefulWidget?",
+    "question": "Which widget should you try to use more often?",
     "options": [
       "StatelessWidget",
       "StatefulWidget",

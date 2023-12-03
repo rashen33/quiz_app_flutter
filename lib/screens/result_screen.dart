@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app_flutter/data/questions.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key, required this.onAction, required this.answerList});
+  const ResultScreen(
+      {super.key, required this.onAction, required this.answerList});
   final Function(String value) onAction;
   final List<String> answerList;
 
-  
-  List<Map<String,Object>> getSummary(){
+  List<Map<String, Object>> getSummary() {
     List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < answerList.length; i++) {
@@ -23,50 +23,98 @@ class ResultScreen extends StatelessWidget {
     return summary;
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+      child: ListView(
         children: [
-          Text(
-            'Result Screen',
-            style: GoogleFonts.poppins(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          ...getSummary()
-            .map(
-              (s) => Text(((s['questionIndex'] as int) + 1).toString())),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            width: 130,
-            height: 50,
-            child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                backgroundColor: Colors.blue[300],
+          Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Result Screen',
+              style: GoogleFonts.poppins(
+                fontSize: 35,
+                fontWeight: FontWeight.bold,
               ),
-              onPressed: () {
-                onAction('quiz');
-              },
-              autofocus: true,
-              child: SizedBox(
-                child: Text(
-                  "Home",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+            ),
+            Text(
+              '5 out of 6 is Correct',
+              style: GoogleFonts.poppins(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            ...getSummary().map(
+              (s) => SizedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        textAlign: TextAlign.left,
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        '${(s['questionIndex'] as int) + 1}. ${s['question']}',
+                      ),
+                      Text(
+                        textAlign: TextAlign.left,
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: const Color.fromARGB(255, 38, 204, 47),
+                        ),
+                        'Correct Answer : \n ${s['correct_answer']}',
+                      ),
+                      Text(
+                        textAlign: TextAlign.left,
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 187, 204, 38),
+                        ),
+                        'Yur Answer : \n ${s['user_answer']}',
+                      )
+                      
+                    ],
                   ),
                 ),
               ),
             ),
-          ),
+            const SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: 130,
+              height: 50,
+              child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.blue[300],
+                ),
+                onPressed: () {
+                  onAction('quiz');
+                },
+                autofocus: true,
+                child: SizedBox(
+                  child: Text(
+                    "Home",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      )
         ],
       ),
     );

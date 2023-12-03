@@ -42,7 +42,6 @@ class StartScreen extends StatelessWidget {
               ),
               onPressed: () {
                 onAction('quiz');
-                print('These are the qeustions $quesitons');
               },
               autofocus: true,
               child: Text(
