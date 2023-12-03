@@ -39,24 +39,29 @@ class ResultScreen extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
       child: ListView(
         children: [
+          Text(
+            'Results',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.poppins(
+              fontSize: 35,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            '${correctAnswers()} out of ${answerList.length} is Correct',
+            textAlign: TextAlign.center,
+
+            style: GoogleFonts.poppins(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Center(
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              // mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start, // Set main axis alignment
+              crossAxisAlignment: CrossAxisAlignment.start, // Set cross axis alignment
               children: [
-                Text(
-                  'Results',
-                  style: GoogleFonts.poppins(
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  '${correctAnswers()} out of ${answerList.length} is Correct',
-                  style: GoogleFonts.poppins(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
                 ...getSummary().map(
                   (s) => SizedBox(
                     child: Padding(
@@ -97,25 +102,27 @@ class ResultScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                SizedBox(
-                  width: 130,
-                  height: 50,
-                  child: OutlinedButton(
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.blue[300],
-                    ),
-                    onPressed: () {
-                      onAction('quiz');
-                    },
-                    autofocus: true,
-                    child: SizedBox(
-                      child: Text(
-                        "Home",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.poppins(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                Center(
+                  child: SizedBox(
+                    width: 130,
+                    height: 50,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: Colors.blue[300],
+                      ),
+                      onPressed: () {
+                        onAction('quiz');
+                      },
+                      autofocus: true,
+                      child: SizedBox(
+                        child: Text(
+                          "Home",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
