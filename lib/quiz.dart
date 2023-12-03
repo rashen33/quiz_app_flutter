@@ -39,7 +39,7 @@ class _QuizState extends State<Quiz> {
     }
   }
 
-  void onRestart(String value) {
+  void onHome(String value) {
     setState(() {
       selectedAnswer = [];
       activeScreen = 'start';
@@ -60,7 +60,8 @@ class _QuizState extends State<Quiz> {
     }
 
     if (activeScreen == 'result') {
-      currentScreen = ResultScreen(onAction: onRestart, answerList: selectedAnswer);
+      currentScreen =
+          ResultScreen(onAction: onHome, answerList: selectedAnswer);
     }
 
     return MaterialApp(

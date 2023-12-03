@@ -54,12 +54,12 @@ class ResultScreen extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 30,
               fontWeight: FontWeight.bold,
+              color: const Color.fromARGB(255, 250, 193, 24),
             ),
           ),
           Center(
             child: Column(
               // mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start, // Set main axis alignment
               crossAxisAlignment: CrossAxisAlignment.start, // Set cross axis alignment
               children: [
                 ...getSummary().map(
@@ -69,7 +69,7 @@ class ResultScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            textAlign: TextAlign.left,
+                            textAlign: TextAlign.start,
                             style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -77,22 +77,22 @@ class ResultScreen extends StatelessWidget {
                             '${(s['questionIndex'] as int) + 1}. ${s['question']}',
                           ),
                           Text(
-                            textAlign: TextAlign.start,
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: const Color.fromARGB(255, 38, 204, 47),
+                              color: Color.fromARGB(255, 37, 245, 47),
                             ),
-                            'Correct Answer : \n ${s['correct_answer']}',
+                            'Correct Answer : ${s['correct_answer']}',
                           ),
                           Text(
-                            textAlign: TextAlign.left,
+                            textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 187, 204, 38),
+                              color: Color.fromARGB(255, 250, 246, 19),
                             ),
-                            'Your Answer : \n ${s['user_answer']}',
+                            'Your Answer : ${s['user_answer']}',
                           )
                         ],
                       ),

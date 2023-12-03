@@ -4,7 +4,7 @@
     "options": ["Widgets", "Components", "Blocks", "Functions"]
   },
   {
-    "question": "How are Flutter UIs built?",
+    "question": "How are Flutter UIs built?           ",
     "options": [
       "By combining widgets in code",
       "By combining widgets in a visual editor",
