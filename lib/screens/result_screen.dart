@@ -39,7 +39,7 @@ class ResultScreen extends StatelessWidget {
           ),
           ...getSummary()
             .map(
-              (s) => Text(((s['question'] as int) + 1).toString())),
+              (s) => Text(((s['questionIndex'] as int) + 1).toString())),
           const SizedBox(
             height: 10,
           ),

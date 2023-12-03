@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app_flutter/data/questions.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key, required this.onAction});
@@ -41,6 +42,7 @@ class StartScreen extends StatelessWidget {
               ),
               onPressed: () {
                 onAction('quiz');
+                print('These are the qeustions $quesitons');
               },
               autofocus: true,
               child: Text(

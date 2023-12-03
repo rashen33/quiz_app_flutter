@@ -15,7 +15,7 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int currentIndex = 0;
-
+  
   void answerQuetion(String answer) {
     widget.onAnswer(answer);
     setState(() {
