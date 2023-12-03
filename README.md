@@ -28,10 +28,10 @@ The Quiz Application is a mobile app developed using Flutter. Key features inclu
 
 ### UI:
 
-![Screenshot_1701611861](https://github.com/rashen33/quiz_app_flutter/assets/128305496/b2924024-2456-4f5d-99d6-aedd2f76d2d1)
+![image](https://github.com/rashen33/quiz_app_flutter/assets/128305496/5c8b42e7-86bb-4442-86cd-ca4d2c3c0544)
 
-![Screenshot_1701611867](https://github.com/rashen33/quiz_app_flutter/assets/128305496/13786e84-a27f-402a-9853-7e84664fdeaf)
+![image](https://github.com/rashen33/quiz_app_flutter/assets/128305496/500822fb-879d-4a43-8bf9-3fabbbab44ef)
 
-![Screenshot_1701611875](https://github.com/rashen33/quiz_app_flutter/assets/128305496/c87dafb5-652e-4286-8de8-a8a4a6a4e947)
+![image](https://github.com/rashen33/quiz_app_flutter/assets/128305496/56139ff1-229f-45b1-94cd-0159a3634f5f)
 
-![Screenshot_1701611882](https://github.com/rashen33/quiz_app_flutter/assets/128305496/025bb8a4-dee1-462c-9612-21aeab0fb5f9)
+![image](https://github.com/rashen33/quiz_app_flutter/assets/128305496/ea9836ef-3514-41cf-b95e-77395a99fac2)
