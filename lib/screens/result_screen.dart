@@ -81,7 +81,7 @@ class ResultScreen extends StatelessWidget {
                             style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 37, 245, 47),
+                              color: Color.fromARGB(255, 245, 242, 37),
                             ),
                             'Correct Answer : ${s['correct_answer']}',
                           ),
@@ -90,7 +90,7 @@ class ResultScreen extends StatelessWidget {
                             style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 250, 246, 19),
+                              color: (s['user_answer'] == s['correct_answer'] ? Color.fromARGB(255, 41, 255, 76) : Color.fromARGB(255, 250, 19, 19)), 
                             ),
                             'Your Answer : ${s['user_answer']}',
                           )
